@@ -9,11 +9,12 @@ class Session_helper:
     def login(self, username, password):
         wd = self.app.wd
         self.app.open_home_page()
-        wd.find_element('name', "user").clear()
-        wd.find_element('name', "user").send_keys(username)
-        wd.find_element('name', "pass").click()
-        wd.find_element('name', "pass").clear()
-        wd.find_element('name', "pass").send_keys(password)
+        wd.find_element('name', "username").click()
+        wd.find_element('name', "username").clear()
+        wd.find_element('name', "username").send_keys(username)
+        wd.find_element('name', "password").click()
+        wd.find_element('name', "password").clear()
+        wd.find_element('name', "password").send_keys(password)
         wd.find_element('xpath', "//input[@value='Login']").click()
 
     def logout(self):
@@ -46,4 +47,4 @@ class Session_helper:
 
     def get_logged_user(self):
         wd = self.app.wd
-        return wd.find_element(By.XPATH, "//div/div[1]/form/b").text[1:-1]
+        return wd.find_element(By.CSS_SELECTOR, "td.login-info-left span").text
