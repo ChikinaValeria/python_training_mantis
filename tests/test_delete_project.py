@@ -3,7 +3,6 @@ from model.project import Project
 import random
 
 def test_delete_project(app):
-    app.session.login("administrator", "root")
     old_projects = app.project.get_project_list()
     if len(old_projects) == 0:
         app.project.create_project(Project(name="test_name", description = "test_description"))
