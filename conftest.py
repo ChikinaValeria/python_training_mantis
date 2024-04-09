@@ -24,8 +24,9 @@ def app(request):
     browser = request.config.getoption("--browser")
     web_config = load_config(request.config.getoption("--target"))["web"]
     web_config_login = load_config(request.config.getoption("--target"))["webadmin"]
+    web_config_projects = load_config(request.config.getoption("--target"))["web_config_projects"]
     if fixture is None or not fixture.is_valid():
-        fixture =Application(browser=browser, base_url=web_config["baseUrl"])
+        fixture =Application(browser=browser, base_url=web_config["baseUrl"], project_url=web_config_projects["project_url"])
     fixture.session.ensure_login(username=web_config_login["username"], password=web_config_login["password"])
     return fixture
 

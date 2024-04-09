@@ -6,9 +6,10 @@ class Project_helper:
     def __init__(self, app):
         self.app = app
 
+
     def open_project_page(self):
         wd = self.app.wd
-        wd.get('http://localhost/mantisbt-1.2.20/mantisbt-1.2.20/manage_proj_page.php')
+        wd.get(self.app.project_url)
 
     def fill_project_form(self, project):
         wd = self.app.wd
