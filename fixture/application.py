@@ -6,7 +6,7 @@ from fixture.project import Project_helper
 
 class Application:
 
-    def __init__(self, browser, base_url, project_url):
+    def __init__(self, browser, base_url):
         if browser == "firefox":
             self.wd = webdriver.Firefox()
         elif browser == "chrome":
@@ -19,7 +19,6 @@ class Application:
         #self.wd.implicitly_wait(60)
         self.session = Session_helper(self)
         self.base_url = base_url
-        self.project_url = project_url
         self.project = Project_helper(self)
 
     def is_valid(self):

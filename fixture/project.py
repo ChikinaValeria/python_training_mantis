@@ -9,7 +9,9 @@ class Project_helper:
 
     def open_project_page(self):
         wd = self.app.wd
-        wd.get(self.app.project_url)
+        if not (wd.current_url.endswith("manage_proj_page.php")):
+            wd.get(self.app.base_url + "/manage_proj_page.php")
+
 
     def fill_project_form(self, project):
         wd = self.app.wd

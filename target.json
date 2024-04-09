@@ -2,6 +2,5 @@
   "web": {"baseUrl":"http://localhost/mantisbt-1.2.20/mantisbt-1.2.20/"},
   "webadmin": {
   "username": "administrator",
-  "password": "root"},
-  "web_config_projects": {"project_url":"http://localhost/mantisbt-1.2.20/mantisbt-1.2.20/manage_proj_page.php"}
+  "password": "root"}
 }
