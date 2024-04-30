@@ -6,5 +6,11 @@
   "ftp": {
     "host": "localhost",
     "username": "mantis",
-    "password": "mantis"}
+    "password": "mantis"},
+  "james": {
+    "host": "localhost",
+    "port": 4555,
+    "username": "root",
+    "password": "root"
+  }
 }
