@@ -29,7 +29,7 @@ class Application:
         self.signup = SignupHelper(self)
         self.mail = MailHelper(self)
         self.soap = SoapHelper(self)
-
+        self.soapUrl =self.baseUrl + config['api-soap']['addUrl']
     def is_valid(self):
         try:
             self.wd.current_url
