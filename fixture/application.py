@@ -30,6 +30,9 @@ class Application:
         self.mail = MailHelper(self)
         self.soap = SoapHelper(self)
         self.soapUrl =self.baseUrl + config['api-soap']['addUrl']
+        self.username = config['webadmin']['username']
+        self.password = config['webadmin']['password']
+
     def is_valid(self):
         try:
             self.wd.current_url
